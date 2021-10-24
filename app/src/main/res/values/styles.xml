@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="custom_navigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@color/custom_bottom_navigation_selected_item_color</item>
+        <item name="itemTextColor">@color/custom_bottom_navigation_selected_item_color</item>
+        <item name="itemRippleColor">@color/custom_bottom_navigation_item_ripple</item>
+        <item name="itemTextAppearanceActive">@style/custom_bottomNavigationView_textFontFamily</item>
+    </style>
+
+    <style name="custom_bottomNavigationView_textFontFamily" parent="TextAppearance.MyTheme.Caption">
+        <item name="fontFamily">@font/iran_sans_bold</item>
+        <item name="android:fontFamily">@font/iran_sans_bold</item>
+    </style>
+</resources>
