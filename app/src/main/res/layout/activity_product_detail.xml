@@ -6,21 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".nikeFeature.productDetails.ProductDetailActivity">
 
-    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+    <com.example.nikestoreproject.view.scroll.ObservableScrollView
         android:id="@+id/productDetailsObservableScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.example.nikestoreproject.view.NikeImageView
-                android:id="@+id/productDetailsProductImage"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:viewAspectRatio="1" />
+                android:layout_height="wrap_content">
+
+                <com.example.nikestoreproject.view.NikeImageView
+                    android:id="@+id/productDetailsProductImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:viewAspectRatio="1" />
+            </FrameLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -68,8 +73,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:textAppearance="@style/TextAppearance.MyTheme.Body2"
-                tools:text="متن را قرار سکمینبتشسکمیبنتسی بکمنسیبتشسمکنیبت شسکمبنتت" />
+                android:text="ورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صف عنوانی و کلیگرند."
+                android:textAppearance="@style/TextAppearance.MyTheme.Body2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="16dp" />
         </LinearLayout>
-    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+    </com.example.nikestoreproject.view.scroll.ObservableScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:translationZ="5dp">
+
+        <ImageView
+            android:id="@+id/productDetailsBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="16dp"
+            app:srcCompat="@drawable/ic_round_arrow_forward_24" />
+
+        <ImageView
+            android:id="@+id/productDetailsFavoriteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_favorites_24" />
+    </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/productDetailsToolBarView"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:alpha="0"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp">
+
+        <TextView
+            android:id="@+id/productDetailsToolBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="48dp"
+            android:textAppearance="@style/TextAppearance.MyTheme.Headline6"
+            tools:text="نام محصول" />
+    </com.google.android.material.card.MaterialCardView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

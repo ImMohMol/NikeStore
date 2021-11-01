@@ -1,5 +1,9 @@
 package com.example.nikestoreproject.data.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class NikeProduct(
     val discount: Int,
     val id: Int,
@@ -8,7 +12,7 @@ data class NikeProduct(
     val price: Int,
     val status: Int,
     val title: String
-)
+) : Parcelable
 
 // VARIABLES FOR SORT TYPE FOR RECEIVING ITEMS FROM SERVER
 const val SORT_BEST_SELLING_PRODUCTS = 1

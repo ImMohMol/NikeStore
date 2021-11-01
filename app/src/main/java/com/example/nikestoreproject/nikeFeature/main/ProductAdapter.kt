@@ -23,6 +23,7 @@ class ProductAdapter(private val imageLoadingService: ImageLoadingService) :
             field = value
             this.notifyDataSetChanged()
         }
+    var productClickListener: OnProductClickListener? = null
 
     inner class ProductViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val productImage: NikeImageView = itemView.findViewById(R.id.ivProductImage)
@@ -39,7 +40,9 @@ class ProductAdapter(private val imageLoadingService: ImageLoadingService) :
             this.previousPrice.text = formatPrice(productItem.previous_price)
             this.previousPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
             this.itemView.implementSpringAnimationTrait()
-            this.itemView.setOnClickListener {}
+            this.itemView.setOnClickListener {
+                productClickListener?.onProductItemClicked(productItem)
+            }
         }
     }
 
@@ -54,4 +57,8 @@ class ProductAdapter(private val imageLoadingService: ImageLoadingService) :
     }
 
     override fun getItemCount(): Int = this.productList.size
+
+    interface OnProductClickListener {
+        fun onProductItemClicked(selectedProduct: NikeProduct)
+    }
 }

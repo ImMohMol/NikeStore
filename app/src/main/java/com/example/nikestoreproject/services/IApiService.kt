@@ -1,6 +1,7 @@
 package com.example.nikestoreproject.services
 
 import com.example.nikestoreproject.data.models.Banner
+import com.example.nikestoreproject.data.models.Comment
 import com.example.nikestoreproject.data.models.NikeProduct
 import io.reactivex.Single
 import retrofit2.Retrofit
@@ -15,6 +16,9 @@ interface IApiService {
 
     @GET("banner/slider")
     fun getBanners(): Single<List<Banner>>
+
+    @GET("comment/list")
+    fun getComments(@Query("product_id") productId: Int): Single<List<Comment>>
 }
 
 fun getApiServiceImplementation(): IApiService {
