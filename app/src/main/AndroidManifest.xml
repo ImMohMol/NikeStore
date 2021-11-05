@@ -14,6 +14,9 @@
         android:theme="@style/Theme.NikeStoreProject"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".nikeFeature.productDetails.comments.AllProductCommentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".nikeFeature.productDetails.ProductDetailActivity"
             android:exported="false" />
         <activity

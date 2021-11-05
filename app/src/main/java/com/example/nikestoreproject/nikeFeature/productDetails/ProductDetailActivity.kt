@@ -1,6 +1,7 @@
 package com.example.nikestoreproject.nikeFeature.productDetails
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -71,6 +72,8 @@ class ProductDetailActivity : AppCompatActivity() {
         this.productDetailViewModel.productCommentsLiveData.observe(this, {
             Timber.i(it.toString())
             this.adapter.comments = it as ArrayList<Comment>
+            if (it.size > 3)
+                productDetailsSeeAllCommentsButton.visibility = View.VISIBLE
             this.initializeCommentsRecyclerView()
         })
     }

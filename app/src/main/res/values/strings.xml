@@ -7,4 +7,7 @@
     <string name="newest">جدیدترین</string>
     <string name="viewAll">مشاهده همه</string>
     <string name="bestSelling">پرفروش ترین</string>
+    <string name="usersComments">نظرات کاربران</string>
+    <string name="insertNewComment">ثبت نظر</string>
+    <string name="seeAllComments">مشاهده همه نظرات</string>
 </resources>
